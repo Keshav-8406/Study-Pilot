@@ -1,0 +1,185 @@
+{
+  "timetable": [
+    {
+      "day": 1,
+      "date": "2026-06-22",
+      "slots": [
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Introduction to Algorithms"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Heap",
+            "Trie"
+          ],
+          "notes": ""
+        }
+      ],
+      "total_study_minutes": 200
+    },
+    {
+      "day": 2,
+      "date": "2026-06-23",
+      "slots": [
+        {
+          "subject": "Data Structures & Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Arrays"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Stacks",
+            "Data Structures & Queues"
+          ],
+          "notes": ""
+        }
+      ],
+      "total_study_minutes": 200
+    },
+    {
+      "day": 3,
+      "date": "2026-06-24",
+      "slots": [
+        {
+          "subject": "Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Queues",
+            "BFS"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Data Structures & Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Revision"
+          ],
+          "notes": ""
+        }
+      ],
+      "total_study_minutes": 200
+    },
+    {
+      "day": 4,
+      "date": "2026-06-25",
+      "slots": [
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Big-Theta"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Greedy Algorithms",
+            "Linked Lists"
+          ],
+          "notes": ""
+        }
+      ],
+      "total_study_minutes": 200
+    },
+    {
+      "day": 5,
+      "date": "2026-06-26",
+      "slots": [
+        {
+          "subject": "Data Structures & Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Arrays"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Stacks",
+            "Data Structures & Queues"
+          ],
+          "notes": ""
+        }
+      ],
+      "total_study_minutes": 200
+    },
+    {
+      "day": 6,
+      "date": "2026-06-27",
+      "slots": [
+        {
+          "subject": "Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Heap",
+            "Trie"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Data Structures & Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Revision"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 30,
+          "chapters_to_cover": [],
+          "notes": "Revision"
+        }
+      ],
+      "total_study_minutes": 230
+    },
+    {
+      "day": 7,
+      "date": "2026-06-28",
+      "slots": [
+        {
+          "subject": "Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Queues",
+            "BFS"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Data Structures & Algorithms",
+          "duration_minutes": 100,
+          "chapters_to_cover": [
+            "Arrays"
+          ],
+          "notes": ""
+        },
+        {
+          "subject": "Introduction to Algorithms",
+          "duration_minutes": 30,
+          "chapters_to_cover": [],
+          "notes": "Revision"
+        }
+      ],
+      "total_study_minutes": 230
+    }
+  ],
+  "weekly_summary": "This is a 7-day study timetable with 5 hours of study per day."
+}
