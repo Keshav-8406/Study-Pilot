@@ -92,7 +92,8 @@ def generate_weekly_plan(allocated_subjects, daily_hours = 4, days_ahead = 7 ):
             2. Sequence chapters logically - foundational topics before advanced ones.
             3. Include short 10-minute breaks between subjects.
             4. On days 6 and 7 (weekend), add a 30-minute revision slot for the highest priority subject.
-            5. Return ONLY valid JSON - no explanation, no markdown.
+            5. For the "notes" field on each slot, label it as one of: "Exam week" (if the exam is within 7 days), "Revision" (if covering previously studied material), or "New chapter" (if introducing new content). Leave notes empty only for break slots.
+            6. Return ONLY valid JSON - no explanation, no markdown.
 
             Return this exact format:
             {{
@@ -105,7 +106,7 @@ def generate_weekly_plan(allocated_subjects, daily_hours = 4, days_ahead = 7 ):
                     "subject": "string",
                     "duration_minutes": number,
                     "chapters_to_cover": ["string"],
-                    "notes": "string"
+                    "notes": "Exam week / Revision / New chapter / empty for breaks"
                     }}
                 ],
                 "total_study_minutes": number
