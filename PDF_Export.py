@@ -345,7 +345,7 @@ def generate_pdf(rows, summary="", output_path="Timetable.pdf"):
 
     doc.build(story)
     print(f"PDF Saved -> {output_path}")
-    rows, summary = load_timetable("timetable.json")
+    # rows, summary = load_timetable("timetable.json")
      
 # rows, summary = load_timetable("Timetable.json")
 # generate_pdf(rows, summary, output_path = "My_Timetable.pdf")
