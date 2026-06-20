@@ -15,13 +15,23 @@ uploaded_file = st.file_uploader("Upload your syllabus pdf file", type = ["pdf"]
 email = st.text_input("Your email (for daily nudge)")
 hours = st.slider("Daily study hours", min_value = 1, max_value = 8, value = 4)
 
+def get_slot_colors(slot):
+    notes_text = (slot.get("notes") or "").lower()
+    chapters_text = ", ".join(slot.get("chapters_to_cover", [])).lower()
+
+    if "exam" in notes_text:
+        return "#fee2e2", "#dc2626"   # red - exam week
+    elif "revision" in notes_text or "revision" in chapters_text:
+        return "#fef9c3", "#ca8a04"   # yellow - revision
+    else:
+        return "#dcfce7", "#16a34a"   # green - new chapters
+
 if st.button("🚀 Generate Plan"):
     if not uploaded_file:
         st.error("Please upload a syllabus pdf file")
         st.stop()
 
     with st.spinner("Reading your syllabus..."):
-        # Save the uploadrd file to the temporary file so that pdfplumber can use it
         with tempfile.NamedTemporaryFile(delete = False, suffix = ".pdf") as tmp:
             tmp.write(uploaded_file.read())
             tmp_path = tmp.name
@@ -47,7 +57,6 @@ if st.button("🚀 Generate Plan"):
             if cleaned_timetable.startswith("json"):
                 cleaned_timetable = cleaned_timetable[4:]
 
-        # Find the JSON object 
         start = cleaned_timetable.find("{")
         end = cleaned_timetable.rfind("}")
         cleaned_timetable = cleaned_timetable[start : end + 1]
@@ -68,11 +77,16 @@ if st.button("🚀 Generate Plan"):
         st.subheader(f"Day {day['day']} - {day['date']}")
         for slot in day['slots']:
             chapters = ", ".join(slot["chapters_to_cover"])
-            st.write(f"**{slot['subject']}** . {slot['duration_minutes']} min")
-            st.caption(chapters)
 
-            if slot.get("notes"):
-                st.caption(f"📄 {slot['notes']}")
+            bg, accent = get_slot_colors(slot)
+            notes_html = f"<br><i>📄 {slot['notes']}</i>" if slot.get("notes") else ""
+            st.markdown(f"""
+            <div style="background-color:{bg}; border-left:5px solid {accent};
+                        padding:10px 14px; border-radius:6px; margin-bottom:10px;">
+                <b>{slot['subject']}</b> — {slot['duration_minutes']} min<br>
+                <span style="color:#475569;">{chapters}</span>{notes_html}
+            </div>
+            """, unsafe_allow_html=True)
         st.divider()
 
     with open("Timetable.pdf", "rb") as f:
@@ -89,4 +103,3 @@ if st.button("🚀 Generate Plan"):
             st.success(f"Daily nudge sent to {email}")
         except:
             st.info("Please add the E-mail to get the notification")
-
